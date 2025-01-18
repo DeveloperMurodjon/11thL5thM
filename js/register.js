@@ -25,16 +25,15 @@ form &&
       body: JSON.stringify(user),
     })
       .then((response) => {
-        if (response.status == 400) {
-          alert("Email yoki username xato");
-        }
-        if (response.status == 200) {
+        if (response.status === 400) {
+          alert("Email yoki username noto'g'ri");
+        } else if (response.status === 200) {
           return response.json();
         }
       })
       .then((data) => {
-        if (data.message == "User registered successfully!") {
-          location.assign(`${window.location.origin}/pages/login/html`);
+        if (data && data.message === "User registered successfully!") {
+          location.assign(`${window.location.origin}/pages/login.html`);
         }
       })
       .catch((error) => {
