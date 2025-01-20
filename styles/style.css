@@ -1,6 +1,98 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+}
+*::placeholder {
+  text-transform: none;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+image {
+  object-fit: cover;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 50px auto;
+}
+.cardList {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  gap: 5px;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 2px solid rgb(161, 142, 33);
+  background-color: rgb(133, 131, 21);
+  color: white;
+}
+
+.container {
+}
+#nameInput {
+  text-transform: capitalize;
+}
+
+.authorInput {
+  text-transform: capitalize;
+}
+.yearInput {
+}
+.cardList {
+  gap: 10px;
+}
+.name {
+}
+.author {
+  text-transform: capitalize;
+}
+
+.year {
+}
+
+.extencions {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+.extencions button {
+  cursor: pointer;
+  border: none;
+  background-color: rgb(133, 131, 21);
+}
+button img {
+  width: 1.7rem;
+}
+#txtSearch {
+  margin-top: 50px;
+}
+.search-container {
+  display: flex;
+  gap: 10px;
 }

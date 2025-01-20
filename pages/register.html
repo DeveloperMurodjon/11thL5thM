@@ -7,14 +7,25 @@
     <link rel="stylesheet" href="../styles/register.css" />
   </head>
   <body>
-    <h1>Register</h1>
-    <form id="registerForm">
-      <input type="text" id="username" placeholder="Enter username" />
-      <input type="email" id="email" placeholder="Enter email" />
-      <input type="password" id="password" placeholder="Enter password" />
-      <button id="registerBtn">Register</button>
-    </form>
+    <div class="containerReg">
+      <h1>Register</h1>
+      <form id="registerForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter username" />
 
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter email" />
+
+        <label for="password">Password:</label>
+        <span>
+          <input type="password" id="password" placeholder="Enter password" />
+          <button type="button" id="show">show</button>
+        </span>
+
+        <button type="submit" id="registerBtn">Register</button>
+      </form>
+      <a href="./login.html">Menda login mavjud →</a>
+    </div>
     <script src="../js/register.js" type="module"></script>
   </body>
 </html>
