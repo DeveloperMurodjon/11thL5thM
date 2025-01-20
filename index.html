@@ -4,12 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home page</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <h1>Main</h1>
-    <script src="./js/main.js" type="module">
-      window.location.href = "./register.html";
+    <!-- MAIN CONTAINER  -->
+
+    <div class="container">
+      <!-- FORM  -->
+      <h2>Kitob qo'shish</h2>
+      <form id="bookForm">
+        <input type="text" id="nameInput" placeholder="Input book name" />
+        <input
+          type="text"
+          class="authorInput"
+          placeholder="Input book author"
+        />
+        <input
+          type="number"
+          class="yearInput"
+          placeholder="Input written year"
+        />
+        <button type="submit" id="saveBook">Save</button>
+      </form>
+
+      <!-- FILTER  -->
+      <h2 id="txtSearch">Qidirish</h2>
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchByTitle"
+          placeholder="Asar nomi bo'yicha qidirish"
+        />
+        <input
+          type="text"
+          id="searchByAuthor"
+          placeholder="Muallif bo'yicha qidirish"
+        />
+      </div>
+
+      <!-- BOOK LIST  -->
+      <div class="cardList"></div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.location.pathname.includes("index.html")) {
+          window.location.href = "./pages/register.html";
+        }
+      });
     </script>
+
+    <script src="./js/main.js" type="module"></script>
   </body>
 </html>
