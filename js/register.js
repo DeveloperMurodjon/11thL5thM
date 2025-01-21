@@ -1,28 +1,16 @@
 import { validateRegister } from "./functions.js";
 
-const form = document.getElementById("registerForm");
+const registerForm = document.getElementById("registerForm");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
-const registerBtn = document.getElementById("registerBtn");
 const show = document.getElementById("show");
 
-show &&
-  show.addEventListener("click", function () {
-    if (password.type === "password") {
-      password.type = "text";
-      show.textContent = "hide";
-    } else {
-      password.type = "password";
-      show.textContent = "show";
-    }
-  });
-
-registerBtn &&
-  registerBtn.addEventListener("click", function (e) {
+registerForm &&
+  registerForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const isValide = validateRegister();
+    const isValide = validateRegister(username, email, password);
     if (!isValide) return;
 
     const user = {
@@ -39,11 +27,10 @@ registerBtn &&
       body: JSON.stringify(user),
     })
       .then((response) => {
-        if (response.status === 400) {
+        if (response.status == 400) {
           alert("Email yoki username noto'g'ri");
           throw new Error("Email yoki username noto'g'ri");
-        }
-        if (!response.ok) {
+        } else if (!response.ok) {
           throw new Error("Xatolik yuz berdi!");
         }
         return response.json();
@@ -55,6 +42,17 @@ registerBtn &&
       })
       .catch((error) => {
         console.error(error.message);
-        alert("Server bilan bog'lanishda muammo yuz berdi!");
+        alert(error.message);
       });
+  });
+
+show &&
+  show.addEventListener("click", function () {
+    if (password.type == "password") {
+      password.type = "text";
+      show.innerHTML = `<img src="../images/hidePassword.png" alt="show password button" />`;
+    } else {
+      password.type = "password";
+      show.innerHTML = `<img src="../images/showPassword.png" alt="show password button" />`;
+    }
   });

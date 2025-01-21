@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home page</title>
     <link rel="stylesheet" href="./styles/style.css" />
+    <script>
+      const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+      if (isLoggedIn !== "true") {
+        window.location.href = "./pages/register.html";
+      }
+    </script>
   </head>
   <body>
     <!-- MAIN CONTAINER  -->
@@ -45,14 +52,6 @@
       <!-- BOOK LIST  -->
       <div class="cardList"></div>
     </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        if (window.location.pathname.includes("index.html")) {
-          window.location.href = "./pages/register.html";
-        }
-      });
-    </script>
 
     <script src="./js/main.js" type="module"></script>
   </body>

@@ -22,7 +22,7 @@ h3 {
   gap: 30px;
   border-radius: 10px;
 }
-#registerForm * {
+#registerForm input {
   border-radius: 10px;
   padding: 10px;
   border: 1px solid black;
@@ -33,7 +33,38 @@ h3 {
   align-items: center;
   margin: 0 auto;
   width: 100%;
+  gap: 30px;
 }
-#password {
-  width: 85%;
+#passwordInput {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 10px;
+  padding: 0;
+  padding-right: 10px;
+  border: 1px solid black;
+}
+#registerForm div #password {
+  border: none;
+}
+
+#registerForm div #password:focus:focus {
+  outline: none;
+  border: none;
+  width: 100%;
+}
+
+#show {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+#show img {
+  width: 20px;
+}
+#registerBtn {
+  border-radius: 10px;
+  padding: 7px 10px;
 }

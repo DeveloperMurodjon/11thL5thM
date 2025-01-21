@@ -1,9 +1,5 @@
 //Register
-function validateRegister() {
-  const username = document.getElementById("username");
-  const email = document.getElementById("email");
-  const password = document.getElementById("password");
-
+function validateRegister(username, email, password) {
   if (!username.value.trim()) {
     alert("Usernameni kiriting");
     return false;
@@ -98,4 +94,10 @@ function addDeleteEventListeners() {
   });
 }
 
-export { validationBook, createCard, getData, addDeleteEventListeners };
+export {
+  validationBook,
+  createCard,
+  getData,
+  addDeleteEventListeners,
+  validateRegister,
+};
